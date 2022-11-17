@@ -1,6 +1,7 @@
 
 import { Rating } from "@mui/material"
 import { Button,Card } from 'react-bootstrap'
+import { Link } from "react-router-dom"
 import EditMovies from "./EditMovies"
 
 const CardMovies=({el,movies,setMovies})=>{
@@ -10,7 +11,7 @@ const CardMovies=({el,movies,setMovies})=>{
           <Card style={{ width: '17rem' }}>
             <Card.Img variant="top" src={el.posterURL} />
         <Card.Body>
-          <Card.Title>{el.title}</Card.Title>
+          <Card.Title><Link to={`/list/${el.id}`}>{el.title}</Link></Card.Title>
           <Card.Text>
             {el.description}
           </Card.Text>
